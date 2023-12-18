@@ -1,0 +1,8 @@
+Request WaterFalls: Refers to network requests depending on the completion of a previous request.
+	The above behavior is fine if in fact the next request depends on the prior. But if you want to run requests in parallel you can use Promise.all([<requests>...])
+
+Streaming: With dynamic loading your site only loads as fast as your slowest request thus blocking a page. Leading to a bad user experience. In Next you can fix this using a loading.tsx and suspense.
+	Streaming is a technique that allows you to break down a route into smaller "chunks" and progressively stream them from the server to the client as they become available. Thus you can stop a slow request from blockin an	an entire page. Ech react component can be considered a chunk. 
+	loading.tsx is a special file type in next.js which can be used as a fallback until all data is loaded.
+
+Next Js Server Actions: They eliminate the need to create API endpoints to mutate data and rather the client can invoke functions which get run server side still.
